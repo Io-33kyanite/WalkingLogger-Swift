@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Logging View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="LoggingViewController" customModule="WalkingLogger" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5sP-Sr-8dc">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </mapView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sSC-br-gH1">
+                                <rect key="frame" x="0.0" y="44" width="414" height="90"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Longitude: ---" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HdQ-eV-CRw">
+                                        <rect key="frame" x="30" y="54" width="273" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Latitude: ---" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7HQ-H7-gEM">
+                                        <rect key="frame" x="30" y="23" width="273" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="7HQ-H7-gEM" firstAttribute="width" secondItem="sSC-br-gH1" secondAttribute="width" multiplier="0.66" id="Njk-jq-bjd"/>
+                                    <constraint firstItem="HdQ-eV-CRw" firstAttribute="width" secondItem="sSC-br-gH1" secondAttribute="width" multiplier="0.66" id="Oar-vl-w8t"/>
+                                    <constraint firstItem="HdQ-eV-CRw" firstAttribute="leading" secondItem="sSC-br-gH1" secondAttribute="leading" constant="30" id="W4E-TN-7b0"/>
+                                    <constraint firstItem="7HQ-H7-gEM" firstAttribute="leading" secondItem="sSC-br-gH1" secondAttribute="leading" constant="30" id="YfW-iq-LN3"/>
+                                    <constraint firstAttribute="bottom" secondItem="HdQ-eV-CRw" secondAttribute="bottom" constant="15" id="eMV-S2-b1z"/>
+                                    <constraint firstItem="HdQ-eV-CRw" firstAttribute="top" secondItem="7HQ-H7-gEM" secondAttribute="bottom" constant="10" id="fif-9p-1NQ"/>
+                                    <constraint firstAttribute="height" constant="90" id="zv0-Do-XCI"/>
+                                </constraints>
+                            </view>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5PR-Xk-vS5">
+                                <rect key="frame" x="0.0" y="818" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="C5e-11-e4K"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem title="Item" image="location.fill" catalog="system" id="WMN-7G-jxZ">
+                                        <connections>
+                                            <action selector="zoomLocation:" destination="BYZ-38-t0r" id="Aw9-KI-j6X"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Item" image="figure.walk" catalog="system" id="LjR-cD-SvZ">
+                                        <connections>
+                                            <action selector="didPushRecordingButton:" destination="BYZ-38-t0r" id="85I-pg-mVs"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" id="UDh-kk-XPU">
+                                        <textField key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="200-iH-c6U">
+                                            <rect key="frame" x="81.5" y="5" width="178" height="34"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="5sP-Sr-8dc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="1rv-pj-Ckf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5sP-Sr-8dc" secondAttribute="trailing" id="E00-E6-9Wa"/>
+                            <constraint firstItem="sSC-br-gH1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="KWy-DO-IlZ"/>
+                            <constraint firstItem="5PR-Xk-vS5" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="NQu-K6-vhR"/>
+                            <constraint firstItem="5PR-Xk-vS5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Nup-V6-oAN"/>
+                            <constraint firstItem="5sP-Sr-8dc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="WOS-2P-Shx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sSC-br-gH1" secondAttribute="trailing" id="YDx-da-Uzw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="5PR-Xk-vS5" secondAttribute="bottom" id="ZEC-tB-Rvn"/>
+                            <constraint firstItem="sSC-br-gH1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="cue-mu-CxP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="5sP-Sr-8dc" secondAttribute="bottom" id="wh6-el-hw8"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="baseMap" destination="5sP-Sr-8dc" id="oYB-kX-Qn9"/>
+                        <outlet property="latitudeLabel" destination="7HQ-H7-gEM" id="VAg-5E-GhA"/>
+                        <outlet property="longitudeLabel" destination="HdQ-eV-CRw" id="5QH-P8-aUs"/>
+                        <outlet property="recordingButton" destination="LjR-cD-SvZ" id="rjj-cM-9OK"/>
+                        <outlet property="recordingStatusLabel" destination="200-iH-c6U" id="QmR-KW-znz"/>
+                        <outlet property="zoomLocationButton" destination="WMN-7G-jxZ" id="iVy-yr-CPl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="138.61607142857142"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="figure.walk" catalog="system" width="95" height="128"/>
+        <image name="location.fill" catalog="system" width="128" height="121"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
